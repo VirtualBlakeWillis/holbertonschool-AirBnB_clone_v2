@@ -7,8 +7,8 @@ app = Flask(__name__)
 app.url_map.strict_slashes = False
 
 
-@app.teardown.appcontext
-def teardown():
+@app.teardown_appcontext
+def teardown(content):
     """ call close """
     import models
     models.storage.close()
