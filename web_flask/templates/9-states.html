@@ -4,17 +4,17 @@
         <TITLE>HBNB</TITLE>
     </HEAD>
     <BODY>
-        {%- if not id -%}
+        {% if not id %}
         <H1>States</H1>
         <UL>
             {% for state in states.values() | sort(attribute="name") %}
             <LI>{{state.id}}}: <B>{{state.name}}</B></LI>
             {% endfor %}
         </UL>
-        {%- endif -%}
+        {% endif -%}
 
         {% for state in states.values() -%}
-            {%- if state.id == id -%}
+            {%- if state.id == id %}
             <H1>State: {{state.name}}</H1>
             <H3>Citites:</H3>
             <UL>
@@ -22,7 +22,7 @@
                 <LI>{{city.id}}: <B>{{city.name}}</B></LI>
                 {% endfor %}
             </UL>
-            {%- endif -%}
+            {% endif -%}
         {%- endfor -%}
         {% if not found %}
         <H1>Not Found!</H1>
